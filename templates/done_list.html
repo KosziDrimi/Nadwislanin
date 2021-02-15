@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="container">
+      <h4>Lista anulowanych zapytań:</h4><br>
+
+        {% for res in result %}
+        <div class="card border-info mb-3" style="max-width: 16rem;">
+          <div class="card-body">
+            <h6 class="card-title"> <strong>{{res.name}}</strong> --> ID: {{res.id}} </h6>
+              <ul class="card-text">
+                <li>Data: {{res.date}}</li>
+                <li>Godzina: {{res.time}}</li>
+              </ul>
+          </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+
+{% endblock %}
