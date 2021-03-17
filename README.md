@@ -7,3 +7,5 @@ Application designed for the Enjoy Leoncin Association:
 Technologies: Python, Flask, SQLAlchemy, HTML5, CSS, Bootstrap
 
 In order to run this project you need to apply your environment variables according to the config.py file and run the app.py script.
+
+This project is still in progress.
