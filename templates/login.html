@@ -9,16 +9,16 @@
       {{ form.hidden_tag() }}
 
       <div class="row">
-        <div class="col">
+        <div class="col-md-4">
           <div class="form-group">
             {{ form.username.label(class="form-control-label") }}
-            {{ form.username(class="form-control form-control-lg") }}<br>
+            {{ form.username(class="form-control form-control-lg border-info mb-1") }}<br>
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <div class="form-group">
             {{ form.password.label(class="form-control-label") }}
-            {{ form.password(class="form-control form-control-lg") }}<br>
+            {{ form.password(class="form-control form-control-lg border-info mb-1") }}<br>
           </div>
         </div>
       </div>
