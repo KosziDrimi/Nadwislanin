@@ -75,7 +75,7 @@ class Reservation(db.Model):
              {self.name} {self.email}
              {self.date} {self.time}
              {self.duration} {self.numbers}
-             {self.feedback} {self.new} """
+             {self.feedback} {self.new}"""
         
 
 @app.route('/')
@@ -145,7 +145,8 @@ def email(res_id):
         res.email_text = email_text
         db.session.commit()
         
-        msg = Message('Dziękujemy za zapytanie', recipients=[res.email], cc=['klimiuk.kasia@gmail.com'])
+        msg = Message('Dziękujemy za zapytanie', recipients=[res.email])
+        msg.cc=[msg.sender]
         msg.html = f'''<b> Witaj {res.name}! <br> Dziękujemy za zainteresowanie rezerwacją 
         Nadwiślanina w dniu {res.date} o godzinie {res.time}. <br> {res.email_text}
         <br> Pozdrawiamy - załoga Nadwiślanina. <b>'''
