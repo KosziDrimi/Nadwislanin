@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="container">
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" style="max-width: 40rem;">
+              <span>{{ message }}</span>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+              </button>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <h4>Szczegóły zapytania:</h4><br>
+      <div class="card border-info mb-3" style="max-width: 40rem;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <h6 class="card-title"> <strong>{{res.name}}</strong> --> ID: {{res.id}} </h6>
+                <ul>
+                  <li>E-mail: {{res.email}}</li>
+                  <li>Data: {{res.date}}</li>
+                  <li>Godzina: {{res.time}}</li>
+                  <li>Długość rejsu: {{res.duration}}</li>
+                  <li>Liczba osób: {{res.numbers}}</li>
+                  <li>Info: {{res.feedback}}</li>
+                </ul>
+            </div>
+            <div class="col">
+              <a class="btn btn-info" href="{{ url_for('app_routing.update', res_id=res.id) }}">Anulowane</a>
+
+              <form class="form-group" method="POST">
+                {{ form.hidden_tag() }}
+                <br>
+                <div class="form-group">
+                  {{ form.confirmation.label(class="form-control-label") }}
+                  {{ form.confirmation(class="form-control form-control-lg") }}<br>
+                </div>
+                <div class="form-group">
+                  {{ form.submit(class="btn btn-info") }}
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <a class="btn btn-info" href="{{ url_for('app_routing.email', res_id=res.id) }}">Utwórz wiadomość e-mail</a>
+
+
+
+    </div>
+
+
+
+
+
+{% endblock %}

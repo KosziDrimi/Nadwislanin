@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+    <div class="container" align="center">
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" style="max-width: 63rem;" align="left">
+              <span>{{ message }}</span>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+              </button>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+
+      <h1>WITAMY!</h1>
+      <br>
+      <img src="{{ url_for('static', filename='nadwislanin.jpg') }}" width="1008" height="756" >
+
+
+    </div>
+
+
+{% endblock %}
