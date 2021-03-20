@@ -18,7 +18,7 @@ docs/_build/
 .vscode
 crud.py
 app_old.py
-
+data.sqlite
 
 # Coverage reports
 htmlcov/
