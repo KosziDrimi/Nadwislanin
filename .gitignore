@@ -17,7 +17,8 @@ _mailinglist
 docs/_build/
 .vscode
 crud.py
-data.sqlite
+app_old.py
+
 
 # Coverage reports
 htmlcov/
